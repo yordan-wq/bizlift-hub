@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
 import heroImage from "@/assets/hero-business.jpg";
 
@@ -24,41 +23,21 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-6 pt-32 pb-20 min-h-screen flex flex-col justify-center">
         <div className="max-w-3xl">
           {/* Trust badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 mb-8"
-          >
+          <div className="reveal-hero reveal-hero-delay-1 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 mb-8">
             <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
             <span className="text-sm font-body text-background/80 tracking-wide">Над 30 години опит • 50+ корпоративни клиенти</span>
-          </motion.div>
+          </div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.7 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-background leading-tight mb-6"
-          >
+          <h1 className="reveal-hero reveal-hero-delay-2 text-4xl md:text-6xl lg:text-7xl font-display font-bold text-background leading-tight mb-6">
             Корпоративно облекло, което{" "}
             <span className="text-gradient-brand">вдъхва доверие</span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="text-lg md:text-xl text-background/70 font-body font-light max-w-xl mb-10 leading-relaxed"
-          >
+          <p className="reveal-hero reveal-hero-delay-3 text-lg md:text-xl text-background/70 font-body font-light max-w-xl mb-10 leading-relaxed">
             Изработваме елегантни дамски униформи за водещи компании в България и чужбина. Собствено производство с гъвкави условия — от малки до големи серии.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7 }}
-            className="flex flex-col sm:flex-row gap-4"
-          >
+          <div className="reveal-hero reveal-hero-delay-4 flex flex-col sm:flex-row gap-4">
             <button
               onClick={scrollToForm}
               className="group inline-flex items-center justify-center gap-3 bg-brand-gradient px-8 py-4 rounded-lg font-body font-semibold text-primary-foreground shadow-brand hover:brightness-110 transition-all duration-300"
@@ -73,7 +52,7 @@ const HeroSection = () => {
               <Phone className="w-5 h-5" />
               +359 876 253 203
             </a>
-          </motion.div>
+          </div>
         </div>
       </div>
 

@@ -1,13 +1,15 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { Send, Phone, Mail, MapPin, Clock, CheckCircle2, Shield } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const ContactForm = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const leftRef = useScrollReveal();
+  const rightRef = useScrollReveal();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -52,11 +54,7 @@ const ContactForm = () => {
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Left - Info */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
+          <div ref={leftRef} className="reveal reveal-left">
             <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
               Изпратете <span className="text-gradient-brand">запитване</span>
             </h2>
@@ -114,14 +112,10 @@ const ContactForm = () => {
                 Вашите данни са защитени и се използват само за обработка на запитването.
               </span>
             </div>
-          </motion.div>
+          </div>
 
           {/* Right - Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
+          <div ref={rightRef} className="reveal reveal-right">
             {submitted ? (
               <div className="h-full flex flex-col items-center justify-center text-center bg-secondary rounded-2xl p-12">
                 <CheckCircle2 className="w-16 h-16 text-primary mb-6" />
@@ -213,7 +207,7 @@ const ContactForm = () => {
                 </p>
               </form>
             )}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

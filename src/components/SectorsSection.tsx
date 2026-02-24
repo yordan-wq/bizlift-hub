@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
 import { Plane, Building2, Briefcase } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import airlineImg from "@/assets/airline-uniform.jpg";
 import hotelImg from "@/assets/hotel-uniform.jpg";
 import corporateImg from "@/assets/corporate-uniform.jpg";
@@ -29,6 +29,9 @@ const sectors = [
 ];
 
 const SectorsSection = () => {
+  const headerRef = useScrollReveal();
+  const gridRef = useScrollReveal();
+
   const scrollToForm = () => {
     document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -36,12 +39,7 @@ const SectorsSection = () => {
   return (
     <section className="py-24 bg-background">
       <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div ref={headerRef} className="reveal reveal-up text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
             Работим с компании от{" "}
             <span className="text-gradient-brand">различни сектори</span>
@@ -49,18 +47,14 @@ const SectorsSection = () => {
           <p className="text-muted-foreground font-body max-w-2xl mx-auto">
             От авиация до хотелиерство — създаваме облекло, което представя бранда ви с професионализъм.
           </p>
-        </motion.div>
+        </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div ref={gridRef} className="reveal reveal-up grid md:grid-cols-3 gap-8">
           {sectors.map((sector, i) => (
-            <motion.div
+            <div
               key={sector.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
               onClick={scrollToForm}
-              className="group cursor-pointer bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 hover:shadow-elegant transition-all duration-500"
+              className={`group cursor-pointer bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 hover:shadow-elegant transition-all duration-500`}
             >
               <div className="aspect-square overflow-hidden">
                 <img
@@ -79,7 +73,7 @@ const SectorsSection = () => {
                 </div>
                 <p className="text-sm font-body text-muted-foreground">{sector.clients}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

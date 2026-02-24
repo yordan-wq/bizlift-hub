@@ -182,3 +182,96 @@
     box-shadow: 0 4px 20px -4px hsl(325 82% 52% / 0.35);
   }
 }
+
+/* ========================================
+   SCROLL-REVEAL ANIMATIONS (WordPress-compatible)
+   Copy these CSS rules + the JS snippet below into WordPress.
+   ======================================== */
+
+/* Base state: hidden before scroll reveal */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none !important;
+}
+
+/* Direction variants */
+.reveal-up {
+  transform: translateY(30px);
+}
+
+.reveal-down {
+  transform: translateY(-30px);
+}
+
+.reveal-left {
+  transform: translateX(-40px);
+}
+
+.reveal-right {
+  transform: translateX(40px);
+}
+
+/* Stagger delays */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+.reveal-delay-6 { transition-delay: 0.6s; }
+.reveal-delay-7 { transition-delay: 0.7s; }
+
+/* Hero-specific: auto-play on load */
+.reveal-hero {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroReveal 0.7s ease-out forwards;
+}
+
+.reveal-hero-delay-1 { animation-delay: 0.2s; }
+.reveal-hero-delay-2 { animation-delay: 0.3s; }
+.reveal-hero-delay-3 { animation-delay: 0.5s; }
+.reveal-hero-delay-4 { animation-delay: 0.7s; }
+
+@keyframes heroReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Sticky CTA bar slide up */
+.sticky-cta-enter {
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.4s ease-out, opacity 0.3s ease-out;
+}
+
+.sticky-cta-enter.is-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/*
+  WORDPRESS JS SNIPPET (paste in your theme or a Custom HTML block):
+  
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var reveals = document.querySelectorAll('.reveal');
+    if (!reveals.length) return;
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(function(el) { observer.observe(el); });
+  });
+  </script>
+*/

@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
 import { Shield, Award, Factory, Users } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const stats = [
   { icon: Award, number: "30+", label: "години опит", desc: "в бизнес облеклото" },
@@ -9,17 +9,15 @@ const stats = [
 ];
 
 const StatsSection = () => {
+  const ref = useScrollReveal();
+
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div ref={ref} className="reveal reveal-up grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, i) => (
-            <motion.div
+            <div
               key={stat.label}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
               className="text-center group"
             >
               <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-4 group-hover:bg-primary/20 transition-colors">
@@ -34,7 +32,7 @@ const StatsSection = () => {
               <div className="text-xs font-body text-muted-foreground mt-1">
                 {stat.desc}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
