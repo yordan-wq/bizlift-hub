@@ -23,7 +23,7 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <div className="font-display text-xl md:text-2xl font-bold text-gold-light tracking-wider">
+        <div className="text-xl md:text-2xl font-bold text-gold-light tracking-wider" style={{ fontFamily: "'Montserrat', sans-serif" }}>
           ALETA PARIZI
         </div>
         <div className="flex items-center gap-4">
