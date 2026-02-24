@@ -8,16 +8,16 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen bg-navy-gradient overflow-hidden">
+    <section className="relative min-h-screen bg-dark-gradient overflow-hidden">
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <img
           src={heroImage}
           alt="Елегантна дамска бизнес униформа"
-          className="w-full h-full object-cover opacity-30"
+          className="w-full h-full object-cover opacity-25"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/90 to-navy/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-foreground via-foreground/90 to-foreground/60" />
       </div>
 
       {/* Content */}
@@ -28,27 +28,27 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-2 mb-8"
+            className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 mb-8"
           >
-            <span className="h-2 w-2 rounded-full bg-gold animate-pulse" />
-            <span className="text-sm font-body text-gold-light tracking-wide">Над 30 години опит • 50+ корпоративни клиенти</span>
+            <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
+            <span className="text-sm font-body text-background/80 tracking-wide">Над 30 години опит • 50+ корпоративни клиенти</span>
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.7 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-primary-foreground leading-tight mb-6"
+            className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-background leading-tight mb-6"
           >
             Корпоративно облекло, което{" "}
-            <span className="text-gradient-gold">вдъхва доверие</span>
+            <span className="text-gradient-brand">вдъхва доверие</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="text-lg md:text-xl text-gold-light/80 font-body font-light max-w-xl mb-10 leading-relaxed"
+            className="text-lg md:text-xl text-background/70 font-body font-light max-w-xl mb-10 leading-relaxed"
           >
             Изработваме елегантни дамски униформи за водещи компании в България и чужбина. Собствено производство с гъвкави условия — от малки до големи серии.
           </motion.p>
@@ -61,14 +61,14 @@ const HeroSection = () => {
           >
             <button
               onClick={scrollToForm}
-              className="group inline-flex items-center justify-center gap-3 bg-gold-gradient px-8 py-4 rounded-lg font-body font-semibold text-accent-foreground shadow-gold hover:brightness-110 transition-all duration-300"
+              className="group inline-flex items-center justify-center gap-3 bg-brand-gradient px-8 py-4 rounded-lg font-body font-semibold text-primary-foreground shadow-brand hover:brightness-110 transition-all duration-300"
             >
               Изпратете запитване
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
             <a
               href="tel:+359876253203"
-              className="inline-flex items-center justify-center gap-3 border border-gold/30 px-8 py-4 rounded-lg font-body font-medium text-gold-light hover:bg-gold/10 transition-all duration-300"
+              className="inline-flex items-center justify-center gap-3 border border-background/30 px-8 py-4 rounded-lg font-body font-medium text-background hover:bg-background/10 transition-all duration-300"
             >
               <Phone className="w-5 h-5" />
               +359 876 253 203

@@ -12,7 +12,6 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate submission
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
@@ -34,7 +33,7 @@ const ContactForm = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-              Изпратете <span className="text-gradient-gold">запитване</span>
+              Изпратете <span className="text-gradient-brand">запитване</span>
             </h2>
             <p className="text-muted-foreground font-body mb-10 leading-relaxed">
               Свържете се с нас за безплатна консултация и оферта. Ще отговорим до 24 часа.
@@ -42,8 +41,8 @@ const ContactForm = () => {
 
             <div className="space-y-6 mb-10">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-5 h-5 text-accent" />
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-5 h-5 text-primary" />
                 </div>
                 <div>
                   <div className="font-body font-semibold text-foreground">Адрес</div>
@@ -51,30 +50,30 @@ const ContactForm = () => {
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-5 h-5 text-accent" />
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-5 h-5 text-primary" />
                 </div>
                 <div>
                   <div className="font-body font-semibold text-foreground">Телефон</div>
-                  <a href="tel:+359876253203" className="text-sm text-muted-foreground hover:text-accent transition-colors">
+                  <a href="tel:+359876253203" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     +359 876 253 203
                   </a>
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-5 h-5 text-accent" />
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-5 h-5 text-primary" />
                 </div>
                 <div>
                   <div className="font-body font-semibold text-foreground">Email</div>
-                  <a href="mailto:office@aleta-parizi.com" className="text-sm text-muted-foreground hover:text-accent transition-colors">
+                  <a href="mailto:office@aleta-parizi.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     office@aleta-parizi.com
                   </a>
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
-                  <Clock className="w-5 h-5 text-accent" />
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Clock className="w-5 h-5 text-primary" />
                 </div>
                 <div>
                   <div className="font-body font-semibold text-foreground">Работно време</div>
@@ -84,8 +83,8 @@ const ContactForm = () => {
             </div>
 
             {/* Trust signals */}
-            <div className="flex items-center gap-3 p-4 rounded-xl bg-secondary/50 border border-border">
-              <Shield className="w-5 h-5 text-accent flex-shrink-0" />
+            <div className="flex items-center gap-3 p-4 rounded-xl bg-secondary border border-border">
+              <Shield className="w-5 h-5 text-primary flex-shrink-0" />
               <span className="text-sm font-body text-muted-foreground">
                 Вашите данни са защитени и се използват само за обработка на запитването.
               </span>
@@ -99,8 +98,8 @@ const ContactForm = () => {
             viewport={{ once: true }}
           >
             {submitted ? (
-              <div className="h-full flex flex-col items-center justify-center text-center bg-secondary/30 rounded-2xl p-12">
-                <CheckCircle2 className="w-16 h-16 text-accent mb-6" />
+              <div className="h-full flex flex-col items-center justify-center text-center bg-secondary rounded-2xl p-12">
+                <CheckCircle2 className="w-16 h-16 text-primary mb-6" />
                 <h3 className="text-2xl font-display font-bold text-foreground mb-3">Благодарим ви!</h3>
                 <p className="text-muted-foreground font-body">
                   Ще се свържем с вас до 24 часа с персонализирана оферта.
@@ -114,7 +113,7 @@ const ContactForm = () => {
                     <input
                       type="text"
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-input bg-card font-body text-foreground focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-input bg-card font-body text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
                       placeholder="Вашето име"
                     />
                   </div>
@@ -123,7 +122,7 @@ const ContactForm = () => {
                     <input
                       type="text"
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-input bg-card font-body text-foreground focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-input bg-card font-body text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
                       placeholder="Име на компанията"
                     />
                   </div>
@@ -134,7 +133,7 @@ const ContactForm = () => {
                     <input
                       type="email"
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-input bg-card font-body text-foreground focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-input bg-card font-body text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
                       placeholder="email@company.com"
                     />
                   </div>
@@ -142,14 +141,14 @@ const ContactForm = () => {
                     <label className="block text-sm font-body font-medium text-foreground mb-2">Телефон</label>
                     <input
                       type="tel"
-                      className="w-full px-4 py-3 rounded-lg border border-input bg-card font-body text-foreground focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-input bg-card font-body text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
                       placeholder="+359 ..."
                     />
                   </div>
                 </div>
                 <div className="mb-5">
                   <label className="block text-sm font-body font-medium text-foreground mb-2">Брой униформи (приблизително)</label>
-                  <select className="w-full px-4 py-3 rounded-lg border border-input bg-card font-body text-foreground focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all">
+                  <select className="w-full px-4 py-3 rounded-lg border border-input bg-card font-body text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
                     <option value="">Изберете</option>
                     <option>10 – 50 бройки</option>
                     <option>50 – 200 бройки</option>
@@ -161,14 +160,14 @@ const ContactForm = () => {
                   <label className="block text-sm font-body font-medium text-foreground mb-2">Съобщение</label>
                   <textarea
                     rows={4}
-                    className="w-full px-4 py-3 rounded-lg border border-input bg-card font-body text-foreground focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all resize-none"
+                    className="w-full px-4 py-3 rounded-lg border border-input bg-card font-body text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all resize-none"
                     placeholder="Опишете вашите нужди..."
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gold-gradient px-8 py-4 rounded-lg font-body font-semibold text-accent-foreground shadow-gold hover:brightness-110 transition-all disabled:opacity-50 flex items-center justify-center gap-3"
+                  className="w-full bg-brand-gradient px-8 py-4 rounded-lg font-body font-semibold text-primary-foreground shadow-brand hover:brightness-110 transition-all disabled:opacity-50 flex items-center justify-center gap-3"
                 >
                   {isSubmitting ? (
                     <>Изпращане...</>

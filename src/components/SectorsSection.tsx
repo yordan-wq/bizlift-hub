@@ -44,7 +44,7 @@ const SectorsSection = () => {
         >
           <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
             Работим с компании от{" "}
-            <span className="text-gradient-gold">различни сектори</span>
+            <span className="text-gradient-brand">различни сектори</span>
           </h2>
           <p className="text-muted-foreground font-body max-w-2xl mx-auto">
             От авиация до хотелиерство — създаваме облекло, което представя бранда ви с професионализъм.
@@ -60,7 +60,7 @@ const SectorsSection = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
               onClick={scrollToForm}
-              className="group cursor-pointer bg-card rounded-2xl overflow-hidden border border-border hover:border-accent/50 hover:shadow-elegant transition-all duration-500"
+              className="group cursor-pointer bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 hover:shadow-elegant transition-all duration-500"
             >
               <div className="aspect-square overflow-hidden">
                 <img
@@ -72,8 +72,8 @@ const SectorsSection = () => {
               </div>
               <div className="p-6">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center group-hover:bg-gold/20 transition-colors">
-                    <sector.icon className="w-5 h-5 text-accent" />
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <sector.icon className="w-5 h-5 text-primary" />
                   </div>
                   <h3 className="text-xl font-display font-bold text-foreground">{sector.title}</h3>
                 </div>

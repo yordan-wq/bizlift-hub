@@ -37,9 +37,9 @@ const WhyUsSection = () => {
               />
             </div>
             {/* Floating trust badge */}
-            <div className="absolute -bottom-6 -right-6 bg-navy-gradient rounded-xl p-5 shadow-gold">
-              <div className="text-2xl font-display font-bold text-gradient-gold">30+</div>
-              <div className="text-xs font-body text-gold-light/80">години опит</div>
+            <div className="absolute -bottom-6 -right-6 bg-brand-gradient rounded-xl p-5 shadow-brand">
+              <div className="text-2xl font-display font-bold text-primary-foreground">30+</div>
+              <div className="text-xs font-body text-primary-foreground/80">години опит</div>
             </div>
           </motion.div>
 
@@ -52,7 +52,7 @@ const WhyUsSection = () => {
           >
             <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
               Защо да изберете{" "}
-              <span className="text-gradient-gold">ALETA PARIZI?</span>
+              <span className="text-gradient-brand">ALETA PARIZI?</span>
             </h2>
             <p className="text-muted-foreground font-body mb-8 leading-relaxed">
               Специализираме в дизайн и производство на корпоративни униформи, костюми, сака, ризи и аксесоари за водещи компании.
@@ -68,7 +68,7 @@ const WhyUsSection = () => {
                   transition={{ delay: i * 0.08 }}
                   className="flex items-start gap-3"
                 >
-                  <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                   <span className="font-body text-foreground">{benefit}</span>
                 </motion.li>
               ))}
@@ -76,7 +76,7 @@ const WhyUsSection = () => {
 
             <button
               onClick={scrollToForm}
-              className="bg-gold-gradient px-8 py-4 rounded-lg font-body font-semibold text-accent-foreground shadow-gold hover:brightness-110 transition-all"
+              className="bg-brand-gradient px-8 py-4 rounded-lg font-body font-semibold text-primary-foreground shadow-brand hover:brightness-110 transition-all"
             >
               Получете безплатна оферта
             </button>
