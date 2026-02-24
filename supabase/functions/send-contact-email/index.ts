@@ -46,7 +46,7 @@ serve(async (req) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Контактна форма <onboarding@resend.dev>',
+        from: 'Контактна форма <noreply@aleta-parizi.com>',
         to: ['office@aleta-parizi.com'],
         subject: `Ново запитване от ${name}`,
         html: htmlBody,
