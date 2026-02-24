@@ -22,8 +22,8 @@ const StatsSection = () => {
               transition={{ delay: i * 0.1 }}
               className="text-center group"
             >
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-secondary mb-4 group-hover:bg-gold/20 transition-colors">
-                <stat.icon className="w-6 h-6 text-accent" />
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-4 group-hover:bg-primary/20 transition-colors">
+                <stat.icon className="w-6 h-6 text-primary" />
               </div>
               <div className="text-3xl md:text-4xl font-display font-bold text-foreground mb-1">
                 {stat.number}
