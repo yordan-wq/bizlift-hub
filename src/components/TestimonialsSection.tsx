@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const testimonials = [
   {
@@ -23,6 +23,9 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => {
+  const headerRef = useScrollReveal();
+  const gridRef = useScrollReveal();
+
   return (
     <section className="py-24 bg-dark-gradient relative overflow-hidden">
       {/* Decorative elements */}
@@ -30,28 +33,19 @@ const TestimonialsSection = () => {
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div ref={headerRef} className="reveal reveal-up text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-background mb-4">
             Какво казват нашите <span className="text-gradient-brand">клиенти</span>
           </h2>
           <p className="text-background/60 font-body max-w-2xl mx-auto">
             Доверието се гради с години — ето защо клиентите ни остават с нас.
           </p>
-        </motion.div>
+        </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div ref={gridRef} className="reveal reveal-up grid md:grid-cols-3 gap-8">
           {testimonials.map((t, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
               className="bg-background/5 backdrop-blur-sm border border-background/10 rounded-2xl p-8 hover:border-primary/30 transition-colors"
             >
               <Quote className="w-8 h-8 text-primary/30 mb-4" />
@@ -67,7 +61,7 @@ const TestimonialsSection = () => {
                 <div className="font-body font-semibold text-background">{t.author}</div>
                 <div className="text-sm font-body text-background/50">{t.role}</div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
