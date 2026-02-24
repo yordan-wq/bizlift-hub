@@ -183,6 +183,7 @@ const ContactForm = () => {
                   <label className="block text-sm font-body font-medium text-foreground mb-2">Съобщение</label>
                   <textarea
                     name="message"
+                    required
                     rows={4}
                     className="w-full px-4 py-3 rounded-lg border border-input bg-card font-body text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all resize-none"
                     placeholder="Опишете вашите нужди..."
