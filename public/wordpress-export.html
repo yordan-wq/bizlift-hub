@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALETA PARIZI — Корпоративно облекло</title>
+<meta name="description" content="Елегантни дамски корпоративни униформи от ALETA PARIZI. Над 30 години опит, собствено производство в София. Безплатна консултация.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        background: 'hsl(0 0% 100%)',
+        foreground: 'hsl(0 0% 13%)',
+        card: 'hsl(0 0% 98%)',
+        'card-foreground': 'hsl(0 0% 13%)',
+        primary: 'hsl(325 82% 52%)',
+        'primary-foreground': 'hsl(0 0% 100%)',
+        secondary: 'hsl(0 0% 95%)',
+        'secondary-foreground': 'hsl(0 0% 13%)',
+        muted: 'hsl(0 0% 90%)',
+        'muted-foreground': 'hsl(0 0% 45%)',
+        border: 'hsl(0 0% 88%)',
+        input: 'hsl(0 0% 88%)',
+        ring: 'hsl(325 82% 52%)',
+      },
+      fontFamily: {
+        display: ['Montserrat', 'sans-serif'],
+        body: ['Inter', 'system-ui', 'sans-serif'],
+      },
+    }
+  }
+}
+</script>
+
+<style>
+  /* === CUSTOM UTILITIES === */
+  .text-gradient-brand {
+    background: linear-gradient(135deg, hsl(325 82% 52%), hsl(325 70% 65%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .bg-dark-gradient {
+    background: linear-gradient(180deg, hsl(0 0% 13%) 0%, hsl(0 0% 20%) 100%);
+  }
+  .bg-brand-gradient {
+    background: linear-gradient(135deg, hsl(325 82% 52%) 0%, hsl(325 90% 40%) 100%);
+  }
+  .shadow-brand {
+    box-shadow: 0 4px 20px -4px hsl(325 82% 52% / 0.35);
+  }
+  .shadow-elegant {
+    box-shadow: 0 20px 60px -15px hsl(0 0% 0% / 0.1);
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: hsl(0 0% 13%);
+    background: hsl(0 0% 100%);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  /* === SCROLL REVEAL === */
+  .reveal {
+    opacity: 0;
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none !important;
+  }
+  .reveal-up { transform: translateY(30px); }
+  .reveal-left { transform: translateX(-40px); }
+  .reveal-right { transform: translateX(40px); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  .reveal-hero {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: heroReveal 0.7s ease-out forwards;
+  }
+  .reveal-hero-delay-1 { animation-delay: 0.2s; }
+  .reveal-hero-delay-2 { animation-delay: 0.3s; }
+  .reveal-hero-delay-3 { animation-delay: 0.5s; }
+  .reveal-hero-delay-4 { animation-delay: 0.7s; }
+  @keyframes heroReveal {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .sticky-cta-enter {
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.4s ease-out, opacity 0.3s ease-out;
+  }
+  .sticky-cta-enter.is-visible {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  /* === SVG icon sizing === */
+  .icon-sm { width: 1rem; height: 1rem; }
+  .icon-md { width: 1.25rem; height: 1.25rem; }
+  .icon-lg { width: 1.5rem; height: 1.5rem; }
+  .icon-xl { width: 2rem; height: 2rem; }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent py-5">
+  <div class="container mx-auto px-6 flex items-center justify-between">
+    <div class="text-xl md:text-2xl font-bold text-foreground tracking-wider font-display">ALETA PARIZI</div>
+    <div class="flex items-center gap-4">
+      <a href="tel:+359876253203" class="hidden sm:flex items-center gap-2 text-sm font-body text-muted-foreground hover:text-foreground transition-colors">
+        <svg class="icon-sm" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +359 876 253 203
+      </a>
+      <a href="#contact-form" class="bg-brand-gradient px-5 py-2.5 rounded-lg font-body text-sm font-semibold text-white hover:brightness-110 transition-all">Запитване</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="relative min-h-screen bg-dark-gradient overflow-hidden">
+  <div class="absolute inset-0">
+    <!-- ЗАМЕНЕТЕ src с пътя до вашето изображение -->
+    <img src="/wp-content/uploads/hero-business.jpg" alt="Елегантна дамска бизнес униформа" class="w-full h-full object-cover opacity-25" loading="eager">
+    <div class="absolute inset-0" style="background:linear-gradient(to right, hsl(0 0% 13%), hsl(0 0% 13% / 0.9), hsl(0 0% 13% / 0.6))"></div>
+  </div>
+  <div class="relative z-10 container mx-auto px-6 pt-32 pb-20 min-h-screen flex flex-col justify-center">
+    <div class="max-w-3xl">
+      <div class="reveal-hero reveal-hero-delay-1 inline-flex items-center gap-2 rounded-full border border-pink-500/30 bg-pink-500/10 px-4 py-2 mb-8">
+        <span class="h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+        <span class="text-sm font-body text-white/80 tracking-wide">Над 30 години опит • 50+ корпоративни клиенти</span>
+      </div>
+      <h1 class="reveal-hero reveal-hero-delay-2 text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white leading-tight mb-6">
+        Корпоративно облекло, което <span class="text-gradient-brand">вдъхва доверие</span>
+      </h1>
+      <p class="reveal-hero reveal-hero-delay-3 text-lg md:text-xl text-white/70 font-body font-light max-w-xl mb-10 leading-relaxed">
+        Изработваме елегантни дамски униформи за водещи компании в България и чужбина. Собствено производство с гъвкави условия — от малки до големи серии.
+      </p>
+      <div class="reveal-hero reveal-hero-delay-4 flex flex-col sm:flex-row gap-4">
+        <a href="#contact-form" class="group inline-flex items-center justify-center gap-3 bg-brand-gradient px-8 py-4 rounded-lg font-body font-semibold text-white shadow-brand hover:brightness-110 transition-all duration-300">
+          Изпратете запитване
+          <svg class="icon-md group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="tel:+359876253203" class="inline-flex items-center justify-center gap-3 border border-white/30 px-8 py-4 rounded-lg font-body font-medium text-white hover:bg-white/10 transition-all duration-300">
+          <svg class="icon-md" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +359 876 253 203
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-0 left-0 right-0 h-32" style="background:linear-gradient(to top, hsl(0 0% 100%), transparent)"></div>
+</section>
+
+<!-- ============ TRUST BAR ============ -->
+<section class="py-12 bg-card border-y border-border">
+  <div class="container mx-auto px-6">
+    <div class="reveal reveal-up">
+      <p class="text-center text-sm font-body text-muted-foreground uppercase tracking-[0.2em] mb-8">Доверието на водещи компании</p>
+      <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
+        <span class="text-sm md:text-base font-display font-semibold text-muted-foreground/70 hover:text-foreground transition-colors whitespace-nowrap">Bulgaria Air</span>
+        <span class="text-sm md:text-base font-display font-semibold text-muted-foreground/70 hover:text-foreground transition-colors whitespace-nowrap">GullivAir</span>
+        <span class="text-sm md:text-base font-display font-semibold text-muted-foreground/70 hover:text-foreground transition-colors whitespace-nowrap">BH Air</span>
+        <span class="text-sm md:text-base font-display font-semibold text-muted-foreground/70 hover:text-foreground transition-colors whitespace-nowrap">GP Aviation</span>
+        <span class="text-sm md:text-base font-display font-semibold text-muted-foreground/70 hover:text-foreground transition-colors whitespace-nowrap">Bul Air</span>
+        <span class="text-sm md:text-base font-display font-semibold text-muted-foreground/70 hover:text-foreground transition-colors whitespace-nowrap">International Hotel Varna</span>
+        <span class="text-sm md:text-base font-display font-semibold text-muted-foreground/70 hover:text-foreground transition-colors whitespace-nowrap">Voya Beach Resort</span>
+        <span class="text-sm md:text-base font-display font-semibold text-muted-foreground/70 hover:text-foreground transition-colors whitespace-nowrap">Софийска вода</span>
+        <span class="text-sm md:text-base font-display font-semibold text-muted-foreground/70 hover:text-foreground transition-colors whitespace-nowrap">Vision Clinic</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="py-20 bg-background">
+  <div class="container mx-auto px-6">
+    <div class="reveal reveal-up grid grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="text-center group">
+        <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-pink-500/10 mb-4 group-hover:bg-pink-500/20 transition-colors">
+          <svg class="icon-lg text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="text-3xl md:text-4xl font-display font-bold text-foreground mb-1">30+</div>
+        <div class="text-sm font-body font-semibold text-foreground uppercase tracking-wide">години опит</div>
+        <div class="text-xs font-body text-muted-foreground mt-1">в бизнес облеклото</div>
+      </div>
+      <div class="text-center group">
+        <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-pink-500/10 mb-4 group-hover:bg-pink-500/20 transition-colors">
+          <svg class="icon-lg text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="text-3xl md:text-4xl font-display font-bold text-foreground mb-1">50+</div>
+        <div class="text-sm font-body font-semibold text-foreground uppercase tracking-wide">корпоративни клиента</div>
+        <div class="text-xs font-body text-muted-foreground mt-1">в България и чужбина</div>
+      </div>
+      <div class="text-center group">
+        <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-pink-500/10 mb-4 group-hover:bg-pink-500/20 transition-colors">
+          <svg class="icon-lg text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/></svg>
+        </div>
+        <div class="text-3xl md:text-4xl font-display font-bold text-foreground mb-1">100%</div>
+        <div class="text-sm font-body font-semibold text-foreground uppercase tracking-wide">собствено производство</div>
+        <div class="text-xs font-body text-muted-foreground mt-1">в София</div>
+      </div>
+      <div class="text-center group">
+        <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-pink-500/10 mb-4 group-hover:bg-pink-500/20 transition-colors">
+          <svg class="icon-lg text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="text-3xl md:text-4xl font-display font-bold text-foreground mb-1">∞</div>
+        <div class="text-sm font-body font-semibold text-foreground uppercase tracking-wide">гъвкави условия</div>
+        <div class="text-xs font-body text-muted-foreground mt-1">от 10 до 10 000 бройки</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section class="py-24 bg-card">
+  <div class="container mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div class="reveal reveal-left relative">
+        <div class="rounded-2xl overflow-hidden shadow-elegant">
+          <!-- ЗАМЕНЕТЕ src с пътя до вашето изображение -->
+          <img src="/wp-content/uploads/products-showcase.webp" alt="Три модела корпоративни дамски униформи" class="w-full h-auto" loading="lazy">
+        </div>
+        <div class="absolute -bottom-6 -right-6 bg-brand-gradient rounded-xl p-5 shadow-brand">
+          <div class="text-2xl font-display font-bold text-white">30+</div>
+          <div class="text-xs font-body text-white/80">години опит</div>
+        </div>
+      </div>
+      <div class="reveal reveal-right">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
+          Защо да изберете <span class="text-gradient-brand">ALETA PARIZI?</span>
+        </h2>
+        <p class="text-muted-foreground font-body mb-8 leading-relaxed">
+          Специализираме в дизайн и производство на корпоративни униформи, костюми, сака, ризи и аксесоари за водещи компании.
+        </p>
+        <ul class="space-y-4 mb-10">
+          <li class="flex items-start gap-3">
+            <svg class="icon-md text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span class="font-body text-foreground">Индивидуален дизайн, съобразен с бранда на вашата компания</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="icon-md text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span class="font-body text-foreground">Висококачествени материали от водещи европейски доставчици</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="icon-md text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span class="font-body text-foreground">Собствено производство в София — бързи срокове и контрол на качеството</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="icon-md text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span class="font-body text-foreground">Гъвкави серии — от 10 до 10 000 бройки</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="icon-md text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span class="font-body text-foreground">Безплатна консултация и предложение за дизайн</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="icon-md text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span class="font-body text-foreground">Доставка в цяла България</span>
+          </li>
+        </ul>
+        <a href="#contact-form" class="inline-block bg-brand-gradient px-8 py-4 rounded-lg font-body font-semibold text-white shadow-brand hover:brightness-110 transition-all">
+          Получете безплатна оферта
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTORS ============ -->
+<section class="py-24 bg-background">
+  <div class="container mx-auto px-6">
+    <div class="reveal reveal-up text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
+        Работим с компании от <span class="text-gradient-brand">различни сектори</span>
+      </h2>
+      <p class="text-muted-foreground font-body max-w-2xl mx-auto">
+        От авиация до хотелиерство — създаваме облекло, което представя бранда ви с професионализъм.
+      </p>
+    </div>
+    <div class="reveal reveal-up grid md:grid-cols-3 gap-8">
+      <!-- Sector 1 -->
+      <a href="#contact-form" class="group bg-card rounded-2xl overflow-hidden border border-border hover:border-pink-500/50 hover:shadow-elegant transition-all duration-500 block">
+        <div class="aspect-square overflow-hidden">
+          <img src="/wp-content/uploads/airline-uniform.jpg" alt="Стюардеса в елегантна авиационна униформа" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-full bg-pink-500/10 flex items-center justify-center group-hover:bg-pink-500/20 transition-colors">
+              <svg class="icon-md text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+            </div>
+            <h3 class="text-xl font-display font-bold text-foreground">Авиокомпании</h3>
+          </div>
+          <p class="text-sm font-body text-muted-foreground">Bulgaria Air, GullivAir, BH Air, GP Aviation, Bul Air</p>
+        </div>
+      </a>
+      <!-- Sector 2 -->
+      <a href="#contact-form" class="group bg-card rounded-2xl overflow-hidden border border-border hover:border-pink-500/50 hover:shadow-elegant transition-all duration-500 block">
+        <div class="aspect-square overflow-hidden">
+          <img src="/wp-content/uploads/hotel-uniform.jpg" alt="Рецепционистка в хотелска униформа" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-full bg-pink-500/10 flex items-center justify-center group-hover:bg-pink-500/20 transition-colors">
+              <svg class="icon-md text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+            </div>
+            <h3 class="text-xl font-display font-bold text-foreground">Хотели и Курорти</h3>
+          </div>
+          <p class="text-sm font-body text-muted-foreground">International Hotel Varna, Voya Beach Resort и др.</p>
+        </div>
+      </a>
+      <!-- Sector 3 -->
+      <a href="#contact-form" class="group bg-card rounded-2xl overflow-hidden border border-border hover:border-pink-500/50 hover:shadow-elegant transition-all duration-500 block">
+        <div class="aspect-square overflow-hidden">
+          <img src="/wp-content/uploads/corporate-uniform.jpg" alt="Служителка в корпоративна униформа" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-full bg-pink-500/10 flex items-center justify-center group-hover:bg-pink-500/20 transition-colors">
+              <svg class="icon-md text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            </div>
+            <h3 class="text-xl font-display font-bold text-foreground">Корпорации и Институции</h3>
+          </div>
+          <p class="text-sm font-body text-muted-foreground">Софийска вода, Vision Clinic и др.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="py-24 bg-dark-gradient relative overflow-hidden">
+  <div class="absolute top-0 right-0 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 left-0 w-64 h-64 bg-pink-500/5 rounded-full blur-3xl"></div>
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="reveal reveal-up text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-4">
+        Какво казват нашите <span class="text-gradient-brand">клиенти</span>
+      </h2>
+      <p class="text-white/60 font-body max-w-2xl mx-auto">Доверието се гради с години — ето защо клиентите ни остават с нас.</p>
+    </div>
+    <div class="reveal reveal-up grid md:grid-cols-3 gap-8">
+      <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-pink-500/30 transition-colors">
+        <svg class="w-8 h-8 text-primary/30 mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V21z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+        <div class="flex gap-1 mb-4">
+          <svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="font-body text-white/80 leading-relaxed mb-6 italic">"Работим с Алета Паризи от над 10 години. Качеството на униформите е безупречно, а екипът ни винаги получава комплименти за визията си."</p>
+        <div>
+          <div class="font-body font-semibold text-white">Мария Иванова</div>
+          <div class="text-sm font-body text-white/50">HR Мениджър</div>
+        </div>
+      </div>
+      <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-pink-500/30 transition-colors">
+        <svg class="w-8 h-8 text-primary/30 mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V21z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+        <div class="flex gap-1 mb-4">
+          <svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="font-body text-white/80 leading-relaxed mb-6 italic">"Професионален подход от първата среща до доставката. Успяха да предложат дизайн, който перфектно отразява бранда ни."</p>
+        <div>
+          <div class="font-body font-semibold text-white">Елена Петрова</div>
+          <div class="text-sm font-body text-white/50">Управител</div>
+        </div>
+      </div>
+      <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-pink-500/30 transition-colors">
+        <svg class="w-8 h-8 text-primary/30 mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V21z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+        <div class="flex gap-1 mb-4">
+          <svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="font-body text-white/80 leading-relaxed mb-6 italic">"Гъвкавите условия за малки серии бяха решаващи за нас. Получихме отлично качество на конкурентна цена."</p>
+        <div>
+          <div class="font-body font-semibold text-white">Десислава Георгиева</div>
+          <div class="text-sm font-body text-white/50">Директор</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT FORM ============ -->
+<section id="contact-form" class="py-24 bg-card scroll-mt-8">
+  <div class="container mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-16">
+      <!-- Left - Info -->
+      <div class="reveal reveal-left">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
+          Изпратете <span class="text-gradient-brand">запитване</span>
+        </h2>
+        <p class="text-muted-foreground font-body mb-10 leading-relaxed">Свържете се с нас за безплатна консултация и оферта. Ще отговорим до 24 часа.</p>
+        <div class="space-y-6 mb-10">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-pink-500/10 flex items-center justify-center flex-shrink-0">
+              <svg class="icon-md text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="font-body font-semibold text-foreground">Адрес</div>
+              <div class="text-sm text-muted-foreground">гр. София, ул. Евлия Челеби 59</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-pink-500/10 flex items-center justify-center flex-shrink-0">
+              <svg class="icon-md text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="font-body font-semibold text-foreground">Телефон</div>
+              <a href="tel:+359876253203" class="text-sm text-muted-foreground hover:text-primary transition-colors">+359 876 253 203</a>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-pink-500/10 flex items-center justify-center flex-shrink-0">
+              <svg class="icon-md text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="font-body font-semibold text-foreground">Email</div>
+              <a href="mailto:office@aleta-parizi.com" class="text-sm text-muted-foreground hover:text-primary transition-colors">office@aleta-parizi.com</a>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-pink-500/10 flex items-center justify-center flex-shrink-0">
+              <svg class="icon-md text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <div class="font-body font-semibold text-foreground">Работно време</div>
+              <div class="text-sm text-muted-foreground">Пон – Пет: 10:00 – 17:00</div>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 p-4 rounded-xl bg-secondary border border-border">
+          <svg class="icon-md text-primary flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span class="text-sm font-body text-muted-foreground">Вашите данни са защитени и се използват само за обработка на запитването.</span>
+        </div>
+      </div>
+
+      <!-- Right - Form -->
+      <div class="reveal reveal-right">
+        <!--
+          ВАЖНО: Заменете action="" с URL на вашия WordPress form handler
+          или използвайте Contact Form 7 / WPForms плъгин.
+        -->
+        <form id="aleta-contact-form" class="bg-white rounded-2xl border border-border p-8 shadow-elegant">
+          <div class="grid sm:grid-cols-2 gap-5 mb-5">
+            <div>
+              <label class="block text-sm font-body font-medium text-foreground mb-2">Име *</label>
+              <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg border border-input bg-card font-body text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="Вашето име">
+            </div>
+            <div>
+              <label class="block text-sm font-body font-medium text-foreground mb-2">Компания *</label>
+              <input type="text" name="company" required class="w-full px-4 py-3 rounded-lg border border-input bg-card font-body text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="Име на компанията">
+            </div>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-5 mb-5">
+            <div>
+              <label class="block text-sm font-body font-medium text-foreground mb-2">Email *</label>
+              <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-input bg-card font-body text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="email@company.com">
+            </div>
+            <div>
+              <label class="block text-sm font-body font-medium text-foreground mb-2">Телефон</label>
+              <input type="tel" name="phone" class="w-full px-4 py-3 rounded-lg border border-input bg-card font-body text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="+359 ...">
+            </div>
+          </div>
+          <div class="mb-5">
+            <label class="block text-sm font-body font-medium text-foreground mb-2">Брой униформи (приблизително)</label>
+            <select name="quantity" class="w-full px-4 py-3 rounded-lg border border-input bg-card font-body text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
+              <option value="">Изберете</option>
+              <option>10 – 50 бройки</option>
+              <option>50 – 200 бройки</option>
+              <option>200 – 500 бройки</option>
+              <option>500+ бройки</option>
+            </select>
+          </div>
+          <div class="mb-6">
+            <label class="block text-sm font-body font-medium text-foreground mb-2">Съобщение *</label>
+            <textarea name="message" required rows="4" class="w-full px-4 py-3 rounded-lg border border-input bg-card font-body text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all resize-none" placeholder="Опишете вашите нужди..."></textarea>
+          </div>
+          <button type="submit" class="w-full bg-brand-gradient px-8 py-4 rounded-lg font-body font-semibold text-white shadow-brand hover:brightness-110 transition-all flex items-center justify-center gap-3">
+            <svg class="icon-md" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Изпратете запитване
+          </button>
+          <p class="text-xs text-muted-foreground font-body text-center mt-4">Ще отговорим до 24 часа • Безплатна консултация</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-dark-gradient py-12 border-t border-white/10">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <div class="text-xl font-bold text-white tracking-wider font-display">ALETA PARIZI</div>
+        <p class="text-sm font-body text-white/50">Корпоративно облекло с традиция от 1993 г.</p>
+      </div>
+      <div class="text-sm font-body text-white/40 text-center md:text-right">
+        <p>гр. София, ул. Евлия Челеби 59</p>
+        <p>&copy; 2026 Алета Паризи. Всички права запазени.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ STICKY CTA BAR ============ -->
+<div id="sticky-cta" class="sticky-cta-enter fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-border py-3 px-6 shadow-lg">
+  <div class="container mx-auto flex items-center justify-between gap-4">
+    <div class="hidden sm:block">
+      <p class="font-body text-sm text-foreground font-medium">Безплатна консултация и оферта до 24 часа</p>
+    </div>
+    <div class="flex items-center gap-3 w-full sm:w-auto">
+      <a href="tel:+359876253203" class="flex items-center justify-center gap-2 border border-border px-4 py-2.5 rounded-lg font-body text-sm text-foreground hover:bg-secondary transition-all">
+        <svg class="icon-sm" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="hidden sm:inline">Обадете се</span>
+      </a>
+      <a href="#contact-form" class="flex-1 sm:flex-none flex items-center justify-center gap-2 bg-brand-gradient px-6 py-2.5 rounded-lg font-body text-sm font-semibold text-white hover:brightness-110 transition-all">
+        Изпратете запитване
+        <svg class="icon-sm" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ JAVASCRIPT ============ -->
+<script>
+// Scroll reveal with IntersectionObserver
+document.addEventListener('DOMContentLoaded', function() {
+  var reveals = document.querySelectorAll('.reveal');
+  if (!reveals.length) return;
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  reveals.forEach(function(el) { observer.observe(el); });
+});
+
+// Header scroll effect
+window.addEventListener('scroll', function() {
+  var header = document.getElementById('site-header');
+  if (window.scrollY > 50) {
+    header.style.background = 'rgba(255,255,255,0.95)';
+    header.style.backdropFilter = 'blur(12px)';
+    header.style.borderBottom = '1px solid hsl(0 0% 88%)';
+    header.style.padding = '0.75rem 0';
+    header.style.boxShadow = '0 1px 3px rgba(0,0,0,0.1)';
+  } else {
+    header.style.background = 'transparent';
+    header.style.backdropFilter = 'none';
+    header.style.borderBottom = 'none';
+    header.style.padding = '1.25rem 0';
+    header.style.boxShadow = 'none';
+  }
+}, { passive: true });
+
+// Sticky CTA bar
+window.addEventListener('scroll', function() {
+  var cta = document.getElementById('sticky-cta');
+  if (window.scrollY > 600) {
+    cta.classList.add('is-visible');
+  } else {
+    cta.classList.remove('is-visible');
+  }
+}, { passive: true });
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    var target = document.querySelector(this.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+
+</body>
+</html>
