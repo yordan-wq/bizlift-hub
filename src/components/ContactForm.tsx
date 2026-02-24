@@ -2,24 +2,49 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, Phone, Mail, MapPin, Clock, CheckCircle2, Shield } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactForm = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    setTimeout(() => {
-      setIsSubmitting(false);
+
+    const formData = new FormData(e.currentTarget);
+    const payload = {
+      name: formData.get("name") as string,
+      company: formData.get("company") as string,
+      email: formData.get("email") as string,
+      phone: formData.get("phone") as string,
+      quantity: formData.get("quantity") as string,
+      message: formData.get("message") as string,
+    };
+
+    try {
+      const { data, error } = await supabase.functions.invoke("send-contact-email", {
+        body: payload,
+      });
+
+      if (error) throw error;
+
       setSubmitted(true);
       toast({
         title: "Запитването е изпратено!",
         description: "Ще се свържем с вас до 24 часа.",
       });
-    }, 1500);
+    } catch (err) {
+      console.error("Error sending email:", err);
+      toast({
+        title: "Грешка при изпращане",
+        description: "Моля, опитайте отново или се свържете по телефона.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -112,6 +137,7 @@ const ContactForm = () => {
                     <label className="block text-sm font-body font-medium text-foreground mb-2">Име *</label>
                     <input
                       type="text"
+                      name="name"
                       required
                       className="w-full px-4 py-3 rounded-lg border border-input bg-card font-body text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
                       placeholder="Вашето име"
@@ -121,6 +147,7 @@ const ContactForm = () => {
                     <label className="block text-sm font-body font-medium text-foreground mb-2">Компания *</label>
                     <input
                       type="text"
+                      name="company"
                       required
                       className="w-full px-4 py-3 rounded-lg border border-input bg-card font-body text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
                       placeholder="Име на компанията"
@@ -132,6 +159,7 @@ const ContactForm = () => {
                     <label className="block text-sm font-body font-medium text-foreground mb-2">Email *</label>
                     <input
                       type="email"
+                      name="email"
                       required
                       className="w-full px-4 py-3 rounded-lg border border-input bg-card font-body text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
                       placeholder="email@company.com"
@@ -141,6 +169,7 @@ const ContactForm = () => {
                     <label className="block text-sm font-body font-medium text-foreground mb-2">Телефон</label>
                     <input
                       type="tel"
+                      name="phone"
                       className="w-full px-4 py-3 rounded-lg border border-input bg-card font-body text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
                       placeholder="+359 ..."
                     />
@@ -148,7 +177,7 @@ const ContactForm = () => {
                 </div>
                 <div className="mb-5">
                   <label className="block text-sm font-body font-medium text-foreground mb-2">Брой униформи (приблизително)</label>
-                  <select className="w-full px-4 py-3 rounded-lg border border-input bg-card font-body text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
+                  <select name="quantity" className="w-full px-4 py-3 rounded-lg border border-input bg-card font-body text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
                     <option value="">Изберете</option>
                     <option>10 – 50 бройки</option>
                     <option>50 – 200 бройки</option>
@@ -159,6 +188,7 @@ const ContactForm = () => {
                 <div className="mb-6">
                   <label className="block text-sm font-body font-medium text-foreground mb-2">Съобщение</label>
                   <textarea
+                    name="message"
                     rows={4}
                     className="w-full px-4 py-3 rounded-lg border border-input bg-card font-body text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all resize-none"
                     placeholder="Опишете вашите нужди..."
