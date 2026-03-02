@@ -5,28 +5,28 @@ import hotelImg from "@/assets/hotel-uniform.jpg";
 import corporateImg from "@/assets/corporate-uniform.jpg";
 
 const sectors = [
-  {
-    icon: Plane,
-    title: "Авиокомпании",
-    clients: "Bulgaria Air, GullivAir, BH Air, GP Aviation, Bul Air",
-    image: airlineImg,
-    alt: "Стюардеса в елегантна авиационна униформа",
-  },
-  {
-    icon: Building2,
-    title: "Хотели и Курорти",
-    clients: "International Hotel Varna, Voya Beach Resort и др.",
-    image: hotelImg,
-    alt: "Рецепционистка в хотелска униформа",
-  },
-  {
-    icon: Briefcase,
-    title: "Корпорации и Институции",
-    clients: "Софийска вода, Vision Clinic и др.",
-    image: corporateImg,
-    alt: "Служителка в корпоративна униформа",
-  },
-];
+{
+  icon: Plane,
+  title: "Авиокомпании",
+  clients: "Bulgaria Air, GullivAir, BH Air, GP Aviation, Bul Air",
+  image: airlineImg,
+  alt: "Стюардеса в елегантна авиационна униформа"
+},
+{
+  icon: Building2,
+  title: "Хотели и Курорти",
+  clients: "International Hotel Varna, Voya Beach Resort и др.",
+  image: hotelImg,
+  alt: "Рецепционистка в хотелска униформа"
+},
+{
+  icon: Briefcase,
+  title: "Корпорации и Институции",
+  clients: "Софийска вода, Vision Clinic и др.",
+  image: corporateImg,
+  alt: "Служителка в корпоративна униформа"
+}];
+
 
 const SectorsSection = () => {
   const headerRef = useScrollReveal();
@@ -50,19 +50,19 @@ const SectorsSection = () => {
         </div>
 
         <div ref={gridRef} className="reveal reveal-up grid md:grid-cols-3 gap-8">
-          {sectors.map((sector, i) => (
-            <div
-              key={sector.title}
-              onClick={scrollToForm}
-              className={`group cursor-pointer bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 hover:shadow-elegant transition-all duration-500`}
-            >
+          {sectors.map((sector, i) =>
+          <div
+            key={sector.title}
+            onClick={scrollToForm}
+            className={`group cursor-pointer bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 hover:shadow-elegant transition-all duration-500`}>
+
               <div className="aspect-square overflow-hidden">
                 <img
-                  src={sector.image}
-                  alt={sector.alt}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
+                src={sector.image}
+                alt={sector.alt}
+                className="w-full h-full group-hover:scale-105 transition-transform duration-700 object-contain"
+                loading="lazy" />
+
               </div>
               <div className="p-6">
                 <div className="flex items-center gap-3 mb-3">
@@ -74,11 +74,11 @@ const SectorsSection = () => {
                 <p className="text-sm font-body text-muted-foreground">{sector.clients}</p>
               </div>
             </div>
-          ))}
+          )}
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default SectorsSection;
