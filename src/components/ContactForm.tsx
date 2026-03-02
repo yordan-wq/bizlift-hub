@@ -76,13 +76,14 @@ const ContactForm = () => {
               <iframe
                 src="https://docs.google.com/forms/d/e/1FAIpQLSfnxiTI4loQ3-CKiv2-rrqBjyL58oKvYqSc9fknKkH085nsKw/viewform?embedded=true"
                 width="100%"
-                height="1081"
+                height="1100"
                 frameBorder="0"
                 marginHeight={0}
                 marginWidth={0}
                 title="Форма за запитване"
-                className="w-full min-h-[700px]"
-                style={{ border: 'none' }}
+                className="w-full"
+                style={{ border: 'none', overflow: 'hidden' }}
+                scrolling="no"
               >
                 Зареждане…
               </iframe>
